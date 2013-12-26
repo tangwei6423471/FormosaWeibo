@@ -2,7 +2,7 @@
 //  UIUtils.m
 //
 //
-//  Created by wei.chen on 12-7-22.
+//  
 //  Copyright (c) 2012年 All rights reserved.
 //
 

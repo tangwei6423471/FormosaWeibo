@@ -95,7 +95,7 @@
         WeiboModel *topWeibo= [_data objectAtIndex:0];
         topId = [topWeibo.weiboId stringValue];
     }
-   //since_id:若請求此參數,則返回ID比since_id大的微博(即是比since_id時間晚的微博)
+   //since_id:若請求此參數,則返回ID比since_id大的微博(即是比since_id新的微博)
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20",@"count",topId,@"since_id",nil ];
     
     SinaWeiboRequest *request =[self.sinaweibo requestWithURL:@"statuses/home_timeline.json"
@@ -105,6 +105,62 @@
     //利用tag值判斷是否為新微博
     request.tag=101;
 }
+
+//加載更多微博
+-(void)loadMoreWeiboData
+{
+    NSString *lastId=@"";
+    //判斷原_data有無資料
+    if (_data.count>0) {
+        //取最後一個,最後一個為較舊的微博
+        WeiboModel *lastWeibo= [_data lastObject];
+        lastId = [lastWeibo.weiboId stringValue];
+    }
+    //max_id:若請求此參數,則返回ID比max_id舊的微博(即是比max_id舊的微博)
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20",@"count",lastId,@"max_id",nil ];
+    
+    SinaWeiboRequest *request =[self.sinaweibo requestWithURL:@"statuses/home_timeline.json"
+                                                       params:params
+                                                   httpMethod:@"GET"
+                                                     delegate:self];
+    //利用tag值判斷是否為請求舊微博
+    request.tag=102;
+
+}
+//加載更多-資料下載完成時調用
+- (void)afterLoadMoreData:(NSDictionary *)result
+{
+    NSArray *statues = [result objectForKey:@"statuses"];
+    //存放Weibo Model
+    NSMutableArray *weibos = [NSMutableArray arrayWithCapacity:statues.count];
+    //遍歷數組 ,每個元素是一個微博字典
+    for (NSDictionary *statuesDic in statues) {
+        
+        WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
+        [weibos addObject:weibo];
+        [weibo release];
+    }
+    
+    if (weibos.count> 0) {
+        //去除第一條重複的資料 ,因為max_id返回ID小於或"等於"max_id的微博
+        [weibos removeObjectAtIndex:0];
+    }
+ 
+    
+    [_data addObjectsFromArray:weibos];
+    //刷新UI
+    //如果statues.count大於20表示有舊微博
+    if (statues.count >= 20 ) {
+        self.tableView.isMore = YES;
+    }else
+    {
+        self.tableView.isMore = NO;
+    }
+    self.tableView.data = _data;
+    [self.tableView reloadData];
+    
+}
+
 //------------------BaseTableView delegate------------------
 #pragma mark - BaseTableView delegate
 //下拉事件
@@ -115,10 +171,23 @@
 //上拉事件
 - (void)refreshUp:(BaseTableView *)tableView
 {
+    //加載更多的舊微博
+    [self loadMoreWeiboData];
+    
+    
 }
 //選中單元格事件
 - (void)didSelectRowAtIndexPath:(BaseTableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
+    
+        DetailViewController *detail = [[DetailViewController alloc] init];
+        //賦給數據
+        detail.weiboModel = [_data objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:detail animated:YES];
+        [detail release];
+    
+        //清除選中效果
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 //------------------BaseTableView delegate End------------------
@@ -195,13 +264,12 @@
 -(void)refreshWeibo
 {
     //下拉顯示加載
-  #warning 要修改
-    //[_refreshHeaderView initLoading:self.tableView];
+    [self.tableView showRefreshHeader];
     //加載新微博數據
     [self LoadNewWeiboData];
 
 }
-//--------------------下拉刷新部份 End--------------------
+
 
 
 #pragma mark-SinaWeiboRequest delegate
@@ -212,7 +280,13 @@
 }
 //加載完成
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
-{   //停止加載的風火輪
+{
+    if (request.tag == 102) {
+        [self afterLoadMoreData:result];
+        return;
+    }
+    
+    //停止加載的風火輪
     //[super showLoading:NO];
     //隱藏HUD
     //[super hideHUD];

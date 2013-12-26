@@ -26,7 +26,8 @@
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL _reloading;
     
-    
+    //上拉更多的按鈕
+    UIButton *_moreButton;
 
 
 }
@@ -36,9 +37,16 @@
 
 ///是否需要下拉刷新
 @property(nonatomic,assign)BOOL refreshHeader;
+//是否有更多(下一頁)
+@property(nonatomic,assign)BOOL isMore;
 
 /**
  *  收起下拉刷新
  */
 - (void)doneLoadingTableViewData;
+
+/**
+ *  顯示下拉加載
+ */
+- (void)showRefreshHeader;
 @end

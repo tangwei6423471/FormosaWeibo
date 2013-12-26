@@ -57,17 +57,17 @@
     return height +=60;
 }
 //選中的cell
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    DetailViewController *detail = [[DetailViewController alloc] init];
-//    //賦給數據
-//    detail.weiboModel = [_data objectAtIndex:indexPath.row];
-//    [self.navigationController pushViewController:detail animated:YES];
-//    [detail release];
-//    
-//    //清除選中效果
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+////    DetailViewController *detail = [[DetailViewController alloc] init];
+////    //賦給數據
+////    detail.weiboModel = [_data objectAtIndex:indexPath.row];
+////    [self.navigationController pushViewController:detail animated:YES];
+////    [detail release];
+////    
+////    //清除選中效果
+////    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+////    
+//}
 //----------------------TableView Delegate End-------------------
 @end

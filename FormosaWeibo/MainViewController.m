@@ -123,6 +123,8 @@
         
         //工廠模式創建Button,如果未來想擴展或是不想要ThemeBotton,只需改UIFactory
         UIButton *button= [UIFactory createButton:backImage highlighted:highlightImage];
+        //顯示highlighted效果
+        button.showsTouchWhenHighlighted = YES;
         float itemWidth= ScreenWidth/5;//5個按鈕
         
         

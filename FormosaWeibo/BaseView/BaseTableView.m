@@ -32,18 +32,42 @@
 {
 
     
-    self.delegate = self;
-    self.dataSource = self;
+    
     
     //創建下拉刷新
     _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.bounds.size.height, self.frame.size.width, self.bounds.size.height)];
     _refreshHeaderView.delegate = self;
     
+    self.delegate = self;
+    self.dataSource = self;
     //預設為開啟
     self.refreshHeader =YES;
     [_refreshHeaderView release];
-
-
+    
+    //------------------------------加載更多-------------------------
+    //預設為開啟
+    self.isMore =YES;
+    //創建加載更多的按鈕
+    //UIButton為類方法,會被autorelease,所以要retain下
+    _moreButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    _moreButton.backgroundColor = [UIColor clearColor];
+    _moreButton.frame = CGRectMake(0, 0, ScreenWidth, 40);
+    [_moreButton setTitle:@"上拉加載更多" forState:UIControlStateNormal];
+    [_moreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _moreButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+    [_moreButton addTarget:self action:@selector(loadMoreAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    //風火輪視圖
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityView.frame= CGRectMake(90, 10, 20, 20);
+    //stopAnimating 預設為隱藏
+    [activityView stopAnimating];
+    activityView.tag = 2013;
+    [_moreButton addSubview:activityView];
+    [activityView release];
+    self.tableFooterView = _moreButton;
+     //------------------------------加載更多 End-------------------------
+    
 }
 
 -(void)setRefreshHeader:(BOOL)refreshHeader
@@ -59,6 +83,26 @@
         [_refreshHeaderView removeFromSuperview];
     
     }
+
+}
+
+-(void)setIsMore:(BOOL)isMore
+{
+    _isMore = isMore;
+    
+    if (isMore) {
+        [_moreButton setTitle:@"上拉加載更多" forState:UIControlStateNormal];
+    }else
+    {
+        [_moreButton setTitle:@"加載完成" forState:UIControlStateNormal];
+        //禁用Button
+        _moreButton.enabled = NO;
+    }
+    
+    
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2013];
+    [activityView stopAnimating];
+
 
 }
 
@@ -79,7 +123,40 @@
     return cell;
     
 }
-//----------------------下拉刷新Delegate-------------------
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if ([self.refreshDelegate respondsToSelector:@selector(didSelectRowAtIndexPath:indexPath:)]) {
+        [self.refreshDelegate didSelectRowAtIndexPath:self indexPath:indexPath];
+    }
+
+}
+
+//------------------------------加載更多 -------------------------
+- (void)loadMoreAction
+{
+    [_moreButton setTitle:@"正在加載" forState:UIControlStateNormal];
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2013];
+    [activityView startAnimating];
+    
+    //調用代理方法 上拉的協議
+    if ([self.refreshDelegate respondsToSelector:@selector(refreshUp:)]) {
+        [self.refreshDelegate refreshUp:self];
+    }
+
+
+}
+//------------------------------加載更多 End-------------------------
+
+
+//----------------------下拉刷新 控件相關方法 Delegate-------------------
+//顯示下拉加載
+- (void)showRefreshHeader
+{
+    [_refreshHeaderView refreshLoading:self];
+}
+
+
 #pragma mark - 下拉刷新Delegate
 //Data Source Loading / Reloading Methods
 - (void)reloadTableViewDataSource{
@@ -104,7 +181,21 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
 	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-	
+
+   // NSLog(@"偏移量:%f",scrollView.contentOffset.y);
+   //NSLog(@"內容高度:%f",	scrollView.contentSize.height);
+    
+    //偏移量+scrollView.height(TableView的高度) =內容高度
+    
+
+    //上拉超出的尺寸
+    float h= scrollView.contentOffset.y + scrollView.height - scrollView.contentSize.height;
+    NSLog(@":%f",h);
+    
+    
+    if ( h > 30 ) {
+        [self loadMoreAction];
+    }
 }
 
 

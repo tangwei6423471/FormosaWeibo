@@ -242,7 +242,7 @@
 }
 
 //扩展:下拉显示加载
-- (void)initLoading:(UIScrollView *)scrollView {
+- (void)refreshLoading:(UIScrollView *)scrollView {
 //    [UIView beginAnimations:nil context:nil];
 //    [UIView setAnimationDuration:0.3];
     scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);

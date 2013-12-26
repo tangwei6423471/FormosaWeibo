@@ -12,7 +12,7 @@
 #import "WeiboTableView.h"
 @interface HomeViewController : BaseViewController<UITableViewDataSource,UITabBarDelegate,BaseTableViewRefreshDelegate>
 {
-    NSArray *_data;
+    NSMutableArray *_data;
 
     ThemeImageView *_barView;
     

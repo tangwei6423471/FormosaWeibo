@@ -742,7 +742,7 @@
     
 }
 
-//------------------wei.chen--------------------------
+//--------------------------------------------
 - (void)setEnableGesture:(BOOL)isEnable {
     [self.pan setEnabled:isEnable];
     [self.tap setEnabled:isEnable];

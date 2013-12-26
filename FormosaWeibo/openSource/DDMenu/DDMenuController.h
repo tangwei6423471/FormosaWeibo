@@ -73,7 +73,7 @@ typedef enum {
 - (void)showRightController:(BOOL)animated;  // show right
 - (void)showLeftController:(BOOL)animated;  // show left
 
-//-------------wei.chen----------------
+//-----------------------------
 - (void)setEnableGesture:(BOOL)isEnable;
 
 @end

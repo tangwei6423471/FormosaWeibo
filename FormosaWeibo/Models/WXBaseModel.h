@@ -3,7 +3,7 @@
 //  MTWeibo
 //
 //所有對象實體的基類
-//  Created by wei.chen on 11-9-22.
+//  
 //  Copyright 2011年  All rights reserved.
 //
 
