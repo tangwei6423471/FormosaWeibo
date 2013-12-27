@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     //登入按钮
-    
+
     
     UIButton * loginButton = [UIFactory createNavigationButton:@"登入"];
     [loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
