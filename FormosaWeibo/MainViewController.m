@@ -42,7 +42,7 @@
     [self _initTabbarView];
     
     //隨時更新新微博,會有小圖標提示未讀數
-    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(timeAction:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(timeAction:) userInfo:nil repeats:YES];
    
 }
 

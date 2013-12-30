@@ -68,7 +68,7 @@
     RTLabel *rt = [[RTLabel alloc] initWithFrame:CGRectMake(0, 0, 240, 0)];
     rt.font= [UIFont systemFontOfSize:14.0f];
     rt.text = commentModel.text;
-    
+
     return rt.optimumSize.height;
 }
 

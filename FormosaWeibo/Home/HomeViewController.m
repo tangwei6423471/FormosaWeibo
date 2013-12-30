@@ -127,39 +127,6 @@
     request.tag=102;
 
 }
-//加載更多-資料下載完成時調用
-- (void)afterLoadMoreData:(NSDictionary *)result
-{
-    NSArray *statues = [result objectForKey:@"statuses"];
-    //存放Weibo Model
-    NSMutableArray *weibos = [NSMutableArray arrayWithCapacity:statues.count];
-    //遍歷數組 ,每個元素是一個微博字典
-    for (NSDictionary *statuesDic in statues) {
-        
-        WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
-        [weibos addObject:weibo];
-        [weibo release];
-    }
-    
-    if (weibos.count> 0) {
-        //去除第一條重複的資料 ,因為max_id返回ID小於或"等於"max_id的微博
-        [weibos removeObjectAtIndex:0];
-    }
- 
-    
-    [_data addObjectsFromArray:weibos];
-    //刷新UI
-    //如果statues.count大於20表示有舊微博
-    if (statues.count >= 20 ) {
-        self.tableView.isMore = YES;
-    }else
-    {
-        self.tableView.isMore = NO;
-    }
-    self.tableView.data = _data;
-    [self.tableView reloadData];
-    
-}
 
 //------------------BaseTableView delegate------------------
 #pragma mark - BaseTableView delegate
@@ -281,62 +248,109 @@
 //加載完成
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
 {
-    if (request.tag == 102) {
-        [self afterLoadMoreData:result];
-        return;
-    }
-    
-    //停止加載的風火輪
-    //[super showLoading:NO];
-    //隱藏HUD
-    //[super hideHUD];
-    [super showHUDComplete:@"載入完成"];
-    //result是Json大字典
-    //statuses內是一個數組(多條微博)
+
     NSArray *statues = [result objectForKey:@"statuses"];
     //存放Weibo Model
     NSMutableArray *weibos = [NSMutableArray arrayWithCapacity:statues.count];
     //遍歷數組 ,每個元素是一個微博字典
     for (NSDictionary *statuesDic in statues) {
-        
+
         WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
         [weibos addObject:weibo];
         [weibo release];
     }
+    //利用tag值判斷
+    if (request.tag == 100) {
+        [self afterLoadWeiboData:weibos];
+        return;
+    } else if (request.tag == 101) {
+        [self afterLoadNewWeiboData:weibos];
+        return;
+    }else if (request.tag == 102) {
+        [self afterLoadMoreData:weibos];
+        return;
+    }
     
+
+}
+
+//tag = 100;
+- (void)afterLoadWeiboData:(NSMutableArray *)weibos
+{
+    //停止加載的風火輪
+    //[super showLoading:NO];
+    //隱藏HUD
+    //[super hideHUD];
+    [super showHUDComplete:@"載入完成"];
     //定義為全局的,可以提供TableView數據
     //全局要retain
     //_data=[weibos retain];
-    //下拉加載時會更新數據,將下拉更新,weibo新數據 加上 舊的_data 完成添加
-    if(_data !=nil)
-    {
-         [weibos addObjectsFromArray:_data];
-    }
-   
     [_data release];//將舊有的_data release
     _data = [weibos retain];
-    
+
     //數據請求完,刷新TableView,重新調用TableView Delegate
     self.tableView.hidden = NO;
     //將數據交給tableView去展示
     self.tableView.data = _data;
     [self.tableView reloadData];
-    
-    //利用tag值判斷是否為新微博 tag 101 為有新微博的請求
-    if (request.tag ==101) {
-        //收起下拉刷新
-        [self.tableView doneLoadingTableViewData];
-        //[self doneLoadingTableViewData];
-        
-        //顯示新微博的動畫
-        int count = statues.count;
-        [self showNewWeiboCount:count];
-        
-        //清除未讀數的小圖     拿到 MainViewController這個Controller(要有上下關系才能這樣做)
-        MainViewController *mainCtrl = (MainViewController *)self.tabBarController;
-        [mainCtrl showBadge:NO];
+
+
+}
+
+//tag = 101 處理下拉數據加載完成之後
+-(void)afterLoadNewWeiboData:(NSMutableArray *)weibos
+{
+    int newCount = weibos.count;
+    //下拉加載時會更新數據,將下拉更新,weibo新數據 加上 舊的_data 完成添加
+    if(_data !=nil)
+    {
+        [weibos addObjectsFromArray:_data];
     }
-   
+
+    [_data release];//將舊有的_data release
+    _data = [weibos retain];
+
+    self.tableView.data = _data;
+    //刷新TableView
+    [self.tableView reloadData];
+
+
+
+    //顯示新微博的動畫
+    [self showNewWeiboCount:newCount];
+
+    //清除未讀數的小圖     拿到 MainViewController這個Controller(要有上下關系才能這樣做)
+    MainViewController *mainCtrl = (MainViewController *)self.tabBarController;
+    [mainCtrl showBadge:NO];
+    //收起下拉刷新
+    [self.tableView doneLoadingTableViewData];
+    //[self doneLoadingTableViewData];
+}
+
+
+//加載更多-資料下載完成時調用
+//上拉加載
+- (void)afterLoadMoreData:(NSMutableArray *)weibos
+{
+
+    if (weibos.count> 0) {
+        //去除第一條重複的資料 ,因為max_id返回ID小於或"等於"max_id的微博
+        [weibos removeObjectAtIndex:0];
+    }
+
+
+    [_data addObjectsFromArray:weibos];
+    //刷新UI
+    //如果statues.count大於20表示有舊微博
+    if (weibos.count >= 20 ) {
+        self.tableView.isMore = YES;
+    }else
+    {
+        self.tableView.isMore = NO;
+    }
+    self.tableView.data = _data;
+    [self.tableView reloadData];
+
 }
 
 
@@ -352,7 +366,7 @@
 {
     //登出
     [self.sinaweibo logOut];
-    
+
 }
 
 
