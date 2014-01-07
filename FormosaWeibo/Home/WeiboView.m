@@ -114,21 +114,10 @@
     
 }
 
-
-
-
-//layoutSubviews幹2件事 1.顯示數據 2.佈局視圖
-//圖片和源微博只能擇一   ,圖片和源微博都在_textLabel的下方顯示
--(void)layoutSubviews
+//單純抽出來的程式碼,沒有return 可加下劃線 方便識別
+-(void)_renderTextLable
 {
-    [super layoutSubviews];
-    //-----------_textLabel子視圖-----------
-
-//    //如果是源微博字體較小
-//    if (self.isSource) {
-//        fontSize=12.0f;
-//    }
-     float fontSize = [WeiboView getFontSize:self.isDetail isSource:self.isSource];
+    float fontSize = [WeiboView getFontSize:self.isDetail isSource:self.isSource];
     _textLabel.font =[UIFont systemFontOfSize:fontSize];
     //高度是自動適應的,所以先給0
     _textLabel.frame=CGRectMake(0, 0, self.width, 0);
@@ -141,9 +130,11 @@
     //optimumSize計算Label高度
     CGSize textSize=_textLabel.optimumSize;
     _textLabel.height=textSize.height;//lable高度
-   
-    //-----------_sourceWeiboView源微博視圖-----------
-    //有源微博數據才有View   
+}
+
+-(void)_renderSourceWeibo
+{
+    //有源微博數據才有View
     WeiboModel *sourceWeibo= _weiboModel.relWeibo;
     //判斷是否有源微博
     if (sourceWeibo!=nil) {
@@ -158,23 +149,94 @@
     }else{
         _sourceWeiboView.hidden = YES;
     }
-    
-    //------------------微博圖片_imageView------------------
-    NSString *thumbnailImage = _weiboModel.thumbnailImage;
-    //不等於空,有圖片才顯示
-    if (thumbnailImage !=nil && ![@"" isEqualToString:thumbnailImage]) {
-        
-        _imageView.hidden = NO;
-        _imageView.frame = CGRectMake(10, _textLabel.bottom+10, 70, 80);
-        [_imageView setImageWithURL:[NSURL URLWithString:thumbnailImage]];
-        
-    }else
+
+}
+-(void)_renderImage
+{
+    if(self.isDetail)
     {
-        _imageView.hidden = YES;
+        //中等尺寸的圖片URL
+        NSString *bmiddleImage = _weiboModel.bmiddleImage;
+        //不等於空,有圖片才顯示
+        if (bmiddleImage !=nil && ![@"" isEqualToString:bmiddleImage]) {
+            
+            _imageView.hidden = NO;
+            _imageView.frame = CGRectMake((self.width -280)/2, _textLabel.bottom+10, 280, 200);
+            [_imageView setImageWithURL:[NSURL URLWithString:bmiddleImage]];
+            
+        }else
+        {
+            _imageView.hidden = YES;
+            
+        }
+        
+        
+    } else
+    {
+        //取出使用者的圖片瀏覽模式
+        int mode = [[NSUserDefaults standardUserDefaults] integerForKey:kBrowMode];
+        //如果使用者沒設定mode 初始會為0
+        if (mode == 0) {
+            mode = smallMode;
+        }
+        //小圖瀏覽模式
+        if (mode == smallMode) {
+            //縮圖的URL
+            NSString *thumbnailImage = _weiboModel.thumbnailImage;
+            //不等於空,有圖片才顯示
+            if (thumbnailImage !=nil && ![@"" isEqualToString:thumbnailImage]) {
+                
+                _imageView.hidden = NO;
+                _imageView.frame = CGRectMake(10, _textLabel.bottom+10, 70, 80);
+                [_imageView setImageWithURL:[NSURL URLWithString:thumbnailImage]];
+                
+            }else
+            {
+                _imageView.hidden = YES;
+                
+            }
+            
+            
+        }else if(mode == LargeMode)//大圖瀏覽模式
+        {
+            //中等尺寸的圖片URL
+            NSString *bmiddleImage = _weiboModel.bmiddleImage;
+            //不等於空,有圖片才顯示
+            if (bmiddleImage !=nil && ![@"" isEqualToString:bmiddleImage]) {
+                
+                _imageView.hidden = NO;
+                _imageView.frame = CGRectMake(10, _textLabel.bottom+10, self.width-20, 200);
+                [_imageView setImageWithURL:[NSURL URLWithString:bmiddleImage]];
+                
+            }else
+            {
+                _imageView.hidden = YES;
+                
+            }
+            
+        }
+        
+        
         
     }
     
-   //------------------_sourceViewBackground------------------
+
+}
+//layoutSubviews幹2件事 1.顯示數據 2.佈局視圖
+//圖片和源微博只能擇一   ,圖片和源微博都在_textLabel的下方顯示
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    //-----------_textLabel子視圖-----------
+    [self _renderTextLable];
+
+   
+    //-----------_sourceWeiboView源微博視圖-----------
+    [self _renderSourceWeibo];
+    
+    //------------------微博圖片_imageView------------------
+    [self _renderImage];
+    //------------------_sourceViewBackground------------------
    //判斷當前是否為源微博
     if (self.isSource) {
         _sourceViewBackground.hidden = NO;
@@ -278,12 +340,43 @@
        float reWeiboHeight= [WeiboView getWeiboViewHeight:rewWeibo isSource:YES isDetail:isDetail];
         height += reWeiboHeight;
     }
-    //---------------計算微博圖片---------------
-    NSString *thumbnailImage = weiboModel.thumbnailImage;
-    if (thumbnailImage !=nil && ![@"" isEqualToString:thumbnailImage]) {
-        //微博圖片高度為80
-        height += (80+10);
-               
+    //---------------計算微博圖片的高度---------------
+    if (isDetail)
+    {
+        //中等尺寸的圖片URL
+        NSString *bmiddleImage = weiboModel.bmiddleImage;
+        //不等於空,有圖片才顯示
+        if (bmiddleImage !=nil && ![@"" isEqualToString:bmiddleImage]) {
+            height += (200+10);
+        }
+
+    } else{
+        //取出使用者的圖片瀏覽模式
+        int mode = [[NSUserDefaults standardUserDefaults] integerForKey:kBrowMode];
+        //如果使用者沒設定mode 初始會為0
+        if (mode == 0) {
+            mode = smallMode;
+        }
+        //小圖瀏覽模式
+        if (mode == smallMode)
+        {
+            NSString *thumbnailImage = weiboModel.thumbnailImage;
+            if (thumbnailImage !=nil && ![@"" isEqualToString:thumbnailImage])
+            {
+                //微博圖片高度為80
+                height += (80+10);
+                
+            }
+        }else if (mode ==LargeMode)
+        {
+            //中等尺寸的圖片URL
+            NSString *bmiddleImage = weiboModel.bmiddleImage;
+            //不等於空,有圖片才顯示
+            if (bmiddleImage !=nil && ![@"" isEqualToString:bmiddleImage]) {
+                height += (200+10);
+            }
+        }
+      
     }
 
 

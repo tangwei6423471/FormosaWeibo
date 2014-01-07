@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab7ee6c-36a8-4ad7-91ad-df6bf6826bbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Joey.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.xib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/project.xcworkspace/xcuserdata/Joey.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/project.xcworkspace/xcuserdata/Joey.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/MainViewController.m" afterPath="$PROJECT_DIR$/FormosaWeibo/MainViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/find.xml" afterPath="$PROJECT_DIR$/.idea/find.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m" afterPath="$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/xcuserdata/Joey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/xcuserdata/Joey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Uitils/CONSTS.h" afterPath="$PROJECT_DIR$/FormosaWeibo/Uitils/CONSTS.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.h" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.m" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.h" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.m" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.xib" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo/Home/WeiboView.m" afterPath="$PROJECT_DIR$/FormosaWeibo/Home/WeiboView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/FormosaWeibo.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FormosaWeibo.iws" />
@@ -32,46 +39,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainViewController.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/MainViewController.m">
+      <file leaf-file-name="ThemeButton.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeButton.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="46" selection-start="995" selection-end="995" vertical-scroll-proportion="0.36727273" vertical-offset="444" max-vertical-offset="6232">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SinaWeiboRequest.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/openSource/sinaweibo_ios_sdk/SinaWeibo/SinaWeiboRequest.h">
+      <file leaf-file-name="UIFactory.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/UIFactory.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="607" max-vertical-offset="1501">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1159">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeiboTableView.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/WeiboTableView.m">
+      <file leaf-file-name="HomeViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="31" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1463">
+            <state line="8" column="8" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="703">
+              <folding>
+                <element signature="e#137#167#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="351" column="32" selection-start="9584" selection-end="9584" vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="7657">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/MainViewController.h">
+      <file leaf-file-name="CONSTS.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/Uitils/CONSTS.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="779">
+            <state line="27" column="8" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="722">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UITabBarController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITabBarController.h">
+      <file leaf-file-name="BrowModeViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="57" selection-start="4233" selection-end="4233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1463">
+            <state line="69" column="0" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.5704348" vertical-offset="983" max-vertical-offset="1767">
               <folding />
             </state>
           </provider>
@@ -80,27 +98,34 @@
       <file leaf-file-name="CommentCell.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="64" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1577">
+            <state line="14" column="0" selection-start="262" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="1002" max-vertical-offset="1577">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m">
+      <file leaf-file-name="BaseTableView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="288" column="4" selection-start="8177" selection-end="8177" vertical-scroll-proportion="0.0" vertical-offset="7177" max-vertical-offset="7752">
-              <folding>
-                <element signature="e#137#167#0" expanded="true" />
-              </folding>
+            <state line="39" column="5" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="508" max-vertical-offset="1083">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseViewController.m">
+      <file leaf-file-name="BaseNavigationViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseNavigationViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="36" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="3268">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1330">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThemeButton.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeButton.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="20" selection-start="139" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="2698">
               <folding />
             </state>
           </provider>
@@ -127,14 +152,20 @@
       <list>
         <option value="$PROJECT_DIR$/FormosaWeibo/Home/RightViewController.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/Discover/DiscoverViewController.m" />
-        <option value="$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m" />
-        <option value="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.h" />
-        <option value="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/ThemeManager/UIFactory.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/BaseView/BaseViewController.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m" />
         <option value="$PROJECT_DIR$/FormosaWeibo/MainViewController.m" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.m" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/CommentTableView.h" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.xib" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.h" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.m" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Home/WeiboView.m" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/Uitils/CONSTS.h" />
+        <option value="$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.m" />
       </list>
     </option>
   </component>
@@ -270,6 +301,160 @@
       <sortByType ProjectPane="false" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Uitils" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeManager" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="More" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormosaWeibo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BaseView" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Cidr.FilesView">
         <subPane>
           <PATH>
@@ -322,85 +507,25 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FormosaWeibo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseView" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="DirectoryView.Xcode" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.29891956" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.29891956" />
   </component>
   <component name="RunManager" selected="Application.FormosaWeibo">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="FormosaWeibo" TARGET_NAME="FormosaWeibo" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="FormosaWeibo" RUN_TARGET_NAME="FormosaWeibo" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PROJECT_NAME="FormosaWeibo" TARGET_NAME="FormosaWeiboTests" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
     </configuration>
@@ -418,10 +543,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PROJECT_NAME="FormosaWeibo" TARGET_NAME="FormosaWeiboTests" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PROJECT_NAME="FormosaWeibo" TARGET_NAME="FormosaWeibo" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
@@ -477,7 +598,6 @@
       <are-modules-shown value="false" />
       <flatten-packages value="false" />
       <is-autoscroll-to-source value="false" />
-      <is-preview-enabled value="true" />
     </todo-panel>
     <todo-panel id="default-changelist">
       <are-packages-shown value="false" />
@@ -495,7 +615,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.67045456" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22958772" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" x="483" y="69" width="303" height="614" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22958772" sideWeight="0.6726384" order="0" side_tool="false" content_ui="combo" x="483" y="69" width="303" height="614" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24494745" sideWeight="0.42694804" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -505,11 +625,32 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262987" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24494745" sideWeight="0.42694804" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.67045456" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22958772" sideWeight="0.6720779" order="0" side_tool="false" content_ui="combo" x="483" y="69" width="303" height="614" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -532,8 +673,13 @@
           <line>31</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m</url>
+          <line>77</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -549,108 +695,116 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.h">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Models/UserModel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="741">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1463">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/WeiboCell.m">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Models/WeiboModel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="9" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-0.16521738" vertical-offset="798" max-vertical-offset="3249" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/UIFactory.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1159">
+        <state line="20" column="57" selection-start="680" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeButton.m">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/WeiboView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2679" />
+        <state line="325" column="18" selection-start="8966" selection-end="8966" vertical-scroll-proportion="0.0" vertical-offset="6175" max-vertical-offset="6935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/theme.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/UIFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1083">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseNavigationViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1330">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="314" selection-end="314" vertical-scroll-proportion="0.42956522" vertical-offset="0" max-vertical-offset="1083" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseTableView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="10" selection-start="2270" selection-end="2270" vertical-scroll-proportion="2.7756522" vertical-offset="0" max-vertical-offset="4484">
+        <state line="39" column="5" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="508" max-vertical-offset="1083">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/DetailViewController.m">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="30" selection-start="2265" selection-end="2265" vertical-scroll-proportion="1.4258289" vertical-offset="684" max-vertical-offset="3458">
+        <state line="14" column="0" selection-start="262" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="1002" max-vertical-offset="1577">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Skins/pink/fontColor.plist">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/BaseView/BaseViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="36" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="3268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/openSource/sinaweibo_ios_sdk/SinaWeibo/SinaWeiboRequest.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="607" max-vertical-offset="1501">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITabBarController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="57" selection-start="4233" selection-end="4233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1463">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/MainViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="779">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/WeiboTableView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="31" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="1463">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="4" selection-start="8177" selection-end="8177" vertical-scroll-proportion="0.0" vertical-offset="7177" max-vertical-offset="7752">
+        <state line="8" column="8" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="703">
           <folding>
             <element signature="e#137#167#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/CommentCell.m">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Home/HomeViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="64" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1577">
+        <state line="351" column="32" selection-start="9584" selection-end="9584" vertical-scroll-proportion="0.0" vertical-offset="6669" max-vertical-offset="7752">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FormosaWeibo/MainViewController.m">
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/UIFactory.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="46" selection-start="995" selection-end="995" vertical-scroll-proportion="0.36727273" vertical-offset="444" max-vertical-offset="6232">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeButton.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/ThemeManager/ThemeButton.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="20" selection-start="139" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/Uitils/CONSTS.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="8" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormosaWeibo/More/BrowModeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.5704348" vertical-offset="983" max-vertical-offset="1767">
           <folding />
         </state>
       </provider>

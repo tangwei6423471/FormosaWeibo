@@ -21,7 +21,7 @@
     return self;
 }
 
-//xib創建會掉這個進行init
+//xib創建會調這個進行init
 -(void)awakeFromNib
 {
     [self _initViews];
@@ -56,7 +56,8 @@
     [_moreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _moreButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
     [_moreButton addTarget:self action:@selector(loadMoreAction) forControlEvents:UIControlEventTouchUpInside];
-    
+    //預設為隱藏
+    _moreButton.hidden = YES;
     //風火輪視圖
     UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityView.frame= CGRectMake(90, 10, 20, 20);
@@ -69,7 +70,7 @@
      //------------------------------加載更多 End-------------------------
     
 }
-
+//是否需要下拉刷新
 -(void)setRefreshHeader:(BOOL)refreshHeader
 {
     _refreshHeader = refreshHeader;
@@ -102,6 +103,26 @@
     
     UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2013];
     [activityView stopAnimating];
+
+
+}
+
+- (void)setData:(NSArray *)data {
+    if (_data !=data)
+    {
+        [_data release];
+        _data=[data retain];
+
+    }
+    //判斷是否有評論數 ,如果沒有則 隱藏"加載更多"的按鈕
+    if(_data.count == 0)
+    {
+        _moreButton.hidden = YES;
+
+    } else
+    {
+        _moreButton.hidden = NO;
+    }
 
 
 }
@@ -193,7 +214,7 @@
     NSLog(@":%f",h);
     
     
-    if ( h > 30 ) {
+    if ( h > 30 && self.isMore) {
         [self loadMoreAction];
     }
 }

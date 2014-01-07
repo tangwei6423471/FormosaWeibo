@@ -7,9 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "CommentTableView.h"
 @class WeiboView;
 @class WeiboModel;
-@interface DetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
+
+@interface DetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,BaseTableViewRefreshDelegate>
 {
     WeiboView *_weiboView;
 
@@ -20,7 +22,7 @@
 //存放微博Comment數據
 @property(nonatomic,retain)NSArray *data;
 
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet CommentTableView *tableView;
 
 @property (retain, nonatomic) IBOutlet UIView *userBarView;
 @property (retain, nonatomic) IBOutlet UIImageView *userImageView;

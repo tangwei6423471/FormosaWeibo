@@ -12,10 +12,12 @@
 #import "WeiboView.h"
 #import "CommentModel.h"
 #import "CommentCell.h"
+
+
 @interface DetailViewController ()
 
 //私有的property
-@property(nonatomic,retain)NSDictionary *commentDic;
+
 @property(nonatomic,retain)SinaWeiboRequest *request;
 
 @end
@@ -35,6 +37,9 @@
 {
     [super viewDidLoad];
     [self _initViews];
+
+    self.tableView.refreshDelegate = self;
+
     //加載評論數據
     [self loadData];
 }
@@ -75,60 +80,7 @@
     
 
 }
-//---------------------------TableView--------------------
-#pragma mark - TableView Delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.data.count;
-}
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    static NSString *identify = @"CommentCell";
-    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
-    if (cell == nil) {
-        //Xib創cell的方式
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"CommentCell" owner:self options:nil] lastObject];
-        
-    }
-    cell.commentModel =  [_data objectAtIndex:indexPath.row];
-    
-    return cell;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CommentModel *comment = [_data objectAtIndex:indexPath.row];
-    float height = [CommentCell getCommentHeight:comment];
-    return height +40 ;
-}
-//設置section高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 20;
-}
-//section的頭視圖設置
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *sectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 40)];
-    sectionHeaderView.backgroundColor = [UIColor whiteColor];
-    //評論數Label
-    UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-    countLabel.backgroundColor = [UIColor clearColor];
-    countLabel.font = [UIFont boldSystemFontOfSize:16.0f];
-    countLabel.textColor = [UIColor blueColor];
-    
-    NSNumber *total = [self.commentDic objectForKey:@"total_number"];
-    int value = [total intValue];
-    countLabel.text = [NSString stringWithFormat:@"評論數:%d",value];
-    [sectionHeaderView addSubview:countLabel];
-    [countLabel release];
-    
-    return [sectionHeaderView autorelease];
-
-}
-//---------------------------TableView End--------------------
 
 //請求評論數據
 - (void)loadData
@@ -149,7 +101,7 @@
 #pragma  mark - SinaWeiboRequest delegate
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
 {
-    self.commentDic =result;
+
     NSArray *array = [result objectForKey:@"comments"];
     
     NSMutableArray *comments = [NSMutableArray arrayWithCapacity:array.count];
@@ -162,9 +114,39 @@
     self.data = comments;
     
     //刷新tableView
+    self.tableView.data = comments;
+    self.tableView.commentDic = result;
     [self.tableView reloadData];
 
+
+
+
+
 }
+//Todo:This TODO
+#pragma mark - BaseTableView delegate
+//下拉事件
+- (void)refreshDown:(BaseTableView *)tableView
+{
+    //請求評論列表接口,參數是Since_id
+
+    //收起下拉
+      [tableView performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3];
+
+
+
+}
+//上拉事件
+- (void)refreshUp:(BaseTableView *)tableView
+{
+   //請求下一頁評論列表,參數是Max_id
+
+   //恢復上拉
+   [tableView performSelector:@selector(setIsMore:) withObject:@YES afterDelay:3];
+
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

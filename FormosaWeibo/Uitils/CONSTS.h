@@ -24,3 +24,10 @@
 
 #define kNavigationBarTitleLabel @"kNavigationBarTitleLabel"
 #define kThemeListLabel @"kThemeListLabel"
+
+//刷新微博通知
+#define kReloadWeiboTableNotification @"kReloadWeiboTableNotification"
+
+#define LargeMode 1  //大圖瀏覽模式
+#define smallMode 2  //小圖瀏覽模式
+#define kBrowMode @"kBrowMode"

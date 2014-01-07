@@ -16,9 +16,26 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //監聽刷新的通知
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData) name:kReloadWeiboTableNotification object:nil ];
        
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
+-(void)awakeFromNib
+{
+    //調用父類的awakeFromNib,不然這裡會複寫父類,就不會調用_initViews
+    [super awakeFromNib];
+    //監聽刷新的通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData) name:kReloadWeiboTableNotification object:nil ];
+    
 }
 
 //----------------------TableView Delegate-------------------

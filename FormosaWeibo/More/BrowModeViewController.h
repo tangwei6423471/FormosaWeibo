@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BrowModeViewController : BaseViewController
+@interface BrowModeViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 @end

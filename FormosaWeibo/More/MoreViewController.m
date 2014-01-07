@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "ThemeViewController.h"
+#import "BrowModeViewController.h"
 @interface MoreViewController ()
 
 @end
@@ -44,7 +45,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 1;
+    return 2;
 }
 
 
@@ -56,9 +57,18 @@
     if (cell==nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify ] autorelease];
     }
+    if (indexPath.row == 0)
+    {
+        cell.textLabel.text=@"主題";
+    }
+    else if (indexPath.row == 1 )
+    {
+        cell.textLabel.text=@"圖片瀏覽模式";
+    
+    }
     
     
-    cell.textLabel.text=@"主題";
+  
     
     return cell;
     
@@ -70,6 +80,13 @@
         ThemeViewController *themeCtrl =[[ ThemeViewController alloc]init];
         [self.navigationController pushViewController:themeCtrl animated:YES];
         [themeCtrl release];
+    }
+    else if (indexPath.row == 1 )
+    {
+        BrowModeViewController *browModel = [[BrowModeViewController alloc] init];
+        [self.navigationController pushViewController:browModel animated:YES];
+        [browModel release];
+        
     }
 
 }

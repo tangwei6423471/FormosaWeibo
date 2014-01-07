@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4058BA7187170DB003F13ED /* CommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4058BA6187170DB003F13ED /* CommentTableView.m */; };
 		D4411E0D185071C700CC1CDB /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4411E0C185071C700CC1CDB /* ThemeButton.m */; };
 		D4411E181850802600CC1CDB /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D4411E141850802600CC1CDB /* CHANGELOG.md */; };
 		D4411E191850802600CC1CDB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4411E161850802600CC1CDB /* JSONKit.m */; };
 		D4411E1A1850802600CC1CDB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4411E171850802600CC1CDB /* README.md */; };
+		D46DDD22187C1E5B00B0DBE6 /* BrowModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46DDD20187C1E5B00B0DBE6 /* BrowModeViewController.m */; };
+		D46DDD23187C1E5B00B0DBE6 /* BrowModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DDD21187C1E5B00B0DBE6 /* BrowModeViewController.xib */; };
 		D4724C6C185C459E00188214 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = D4724C6A185C459E00188214 /* RegexKitLite.m */; };
 		D4724C6E185C473600188214 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4724C6D185C473600188214 /* libicucore.dylib */; };
 		D49721A8185EE960008B8122 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D49721A7185EE960008B8122 /* NSString+URLEncoding.m */; };
@@ -176,12 +179,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4058BA5187170DB003F13ED /* CommentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableView.h; sourceTree = "<group>"; };
+		D4058BA6187170DB003F13ED /* CommentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableView.m; sourceTree = "<group>"; };
 		D4411E0B185071C700CC1CDB /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
 		D4411E0C185071C700CC1CDB /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
 		D4411E141850802600CC1CDB /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D4411E151850802600CC1CDB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		D4411E161850802600CC1CDB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		D4411E171850802600CC1CDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D46DDD1F187C1E5B00B0DBE6 /* BrowModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowModeViewController.h; sourceTree = "<group>"; };
+		D46DDD20187C1E5B00B0DBE6 /* BrowModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowModeViewController.m; sourceTree = "<group>"; };
+		D46DDD21187C1E5B00B0DBE6 /* BrowModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowModeViewController.xib; sourceTree = "<group>"; };
 		D4724C68185C459E00188214 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		D4724C6A185C459E00188214 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		D4724C6D185C473600188214 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -743,6 +751,8 @@
 				D49721B818643F2F008B8122 /* CommentCell.h */,
 				D49721B918643F2F008B8122 /* CommentCell.m */,
 				D49721BB18643F73008B8122 /* CommentCell.xib */,
+				D4058BA5187170DB003F13ED /* CommentTableView.h */,
+				D4058BA6187170DB003F13ED /* CommentTableView.m */,
 				D49721AF18604916008B8122 /* DetailViewController.h */,
 				D49721B018604916008B8122 /* DetailViewController.m */,
 				D49721B118604916008B8122 /* DetailViewController.xib */,
@@ -775,6 +785,9 @@
 				D4D04819185083C0008AA6D1 /* ThemeViewController.h */,
 				D4D0481A185083C0008AA6D1 /* ThemeViewController.m */,
 				D4D0481B185083C0008AA6D1 /* ThemeViewController.xib */,
+				D46DDD1F187C1E5B00B0DBE6 /* BrowModeViewController.h */,
+				D46DDD20187C1E5B00B0DBE6 /* BrowModeViewController.m */,
+				D46DDD21187C1E5B00B0DBE6 /* BrowModeViewController.xib */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -992,6 +1005,7 @@
 				D4E9CD7F184F043400E713D4 /* LeftViewController.xib in Resources */,
 				D4A9D5E0184E04C0002520A6 /* tabbar_profile@2x.png in Resources */,
 				D4A9D5E6184E04C0002520A6 /* tableview_pulltorefresh_arrow@2x.png in Resources */,
+				D46DDD23187C1E5B00B0DBE6 /* BrowModeViewController.xib in Resources */,
 				D4A9D5D3184E04C0002520A6 /* tabbar_message_center.png in Resources */,
 				D4A9D5CE184E04C0002520A6 /* tabbar_home@2x.png in Resources */,
 				D4A9D5ED184E04C0002520A6 /* timeline_retweet_background.png in Resources */,
@@ -1051,8 +1065,10 @@
 				D4CF66F51857124F006971AB /* WeiboCell.m in Sources */,
 				D4B497BD1855AA970073B54C /* UIFactory.m in Sources */,
 				D4A9D0FC184E0377002520A6 /* DDMenuController.m in Sources */,
+				D4058BA7187170DB003F13ED /* CommentTableView.m in Sources */,
 				D4E9CD7E184F043400E713D4 /* LeftViewController.m in Sources */,
 				D4B497B718559A8C0073B54C /* ThemeImageView.m in Sources */,
+				D46DDD22187C1E5B00B0DBE6 /* BrowModeViewController.m in Sources */,
 				D4C8AC0B184F3222002CA930 /* SinaWeiboAuthorizeView.m in Sources */,
 				D4C8AC0A184F3222002CA930 /* SinaWeibo.m in Sources */,
 				D49721AE18603EC2008B8122 /* MBProgressHUD.m in Sources */,
