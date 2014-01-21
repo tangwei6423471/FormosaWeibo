@@ -74,7 +74,7 @@
 
 - (void)rtLabel:(id)rtLabel didSelectLinkWithURL:(NSURL*)url
 {
-    
+     [UIUtils openLink:url view:self];
 }
 
 @end

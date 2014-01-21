@@ -12,7 +12,8 @@
 #import "WeiboView.h"
 #import "RegexKitLite.h"
 #import "UIUtils.h"
-
+#import "UIButton+WebCache.h"
+#import "ProfileViewController.h"
 @implementation WeiboCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -25,7 +26,7 @@
 }
 -(void)_initViews
 {   //用戶頭像
-    _userImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    _userImage = [[UIButton buttonWithType:UIButtonTypeCustom] retain];//[[UIImageView alloc] initWithFrame:CGRectZero];
     //---------------設置_userImage外邊框------------
     //設置圓弧半徑
     _userImage.layer.cornerRadius = 2;
@@ -36,6 +37,8 @@
     //超出視圖的部份裁剪掉
     _userImage.layer.masksToBounds = YES;
     //---------------設置_userImage外邊框 End---------
+    //添加點擊事件
+    [_userImage addTarget:self action:@selector(userAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_userImage];
     //暱稱
     _nickLabel =[[UILabel alloc] initWithFrame:CGRectZero];
@@ -111,7 +114,7 @@
     if (createDate.length !=0) {
         _createLabel.hidden = NO;
         _createLabel.frame=CGRectMake(50, self.height-20, 100, 20);
-        [_createLabel sizeToFit];
+       
         /*
          //方法一
         //日期格式化
@@ -126,7 +129,7 @@
          */
         //方法二 使用UIUtils的類方法
         _createLabel.text = [UIUtils fomateString:createDate];
-    
+       [_createLabel sizeToFit];
         
     }else
     {
@@ -134,14 +137,16 @@
     }
     
     //------------------------轉發數------------------------
-    _repostCountLabel.frame=CGRectMake(_createLabel.right+10, _createLabel.top, 100, 20);
-     [_repostCountLabel sizeToFit];
+     _repostCountLabel.frame=CGRectMake(_createLabel.right+10, _createLabel.top, 100, 20);
+    
     //將NSNumber轉為NSString
     NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
     NSString *repostCountToString = [numberFormatter stringFromNumber:_weiboModel.repostsCount];
     [numberFormatter release];
     NSString *String =[NSString stringWithFormat:@"轉發數: %@", repostCountToString];
+   
     _repostCountLabel.text=String;
+     [_repostCountLabel sizeToFit];
 
     
     //------------------------微博來源------------------------
@@ -163,8 +168,21 @@
         _sourceLabel.frame = CGRectMake(_repostCountLabel.right+10,_createLabel.top, 100, 20);
         [_sourceLabel sizeToFit];
     }
+   
     
+}
+
+-(void)userAction:(UIButton *)button
+{
+    NSString *screen_name = _weiboModel.user.screen_name;
+    NSLog(@"%@",screen_name);
     
+    ProfileViewController *profile = [[ProfileViewController alloc] init];
+    profile.userName = screen_name;//重新賦值給profile.userName(原本值 為 單前用戶ID)
+    [self.GetSelfViewController.navigationController pushViewController:profile animated:YES];
+    [profile release];
+    
+
 }
 
 @end

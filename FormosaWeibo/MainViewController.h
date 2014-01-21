@@ -15,9 +15,12 @@
     UIView *_tabbarView;
     UIImageView *_badgeView;
     HomeViewController *home;
+   
 
 
 }
+
+
 
 /**
  *  是否顯示微博未讀數

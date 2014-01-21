@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "CommentTableView.h"
+
 @class WeiboView;
 @class WeiboModel;
 
@@ -25,7 +26,7 @@
 @property (retain, nonatomic) IBOutlet CommentTableView *tableView;
 
 @property (retain, nonatomic) IBOutlet UIView *userBarView;
-@property (retain, nonatomic) IBOutlet UIImageView *userImageView;
+@property (retain, nonatomic) IBOutlet UIButton *userImageView;
 @property (retain, nonatomic) IBOutlet UILabel *nickLabel;
 
 @end

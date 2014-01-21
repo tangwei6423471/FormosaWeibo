@@ -18,6 +18,7 @@
     #import "UIViewExt.h"
     #import "UIUtils.h"
     #import "WXHLGlobalUICommon.h"
+    #import "UIView+Additions.h"
 #endif
 
 

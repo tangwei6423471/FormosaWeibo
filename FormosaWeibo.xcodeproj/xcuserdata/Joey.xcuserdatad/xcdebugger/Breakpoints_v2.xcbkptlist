@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FormosaWeibo/Home/DetailViewController.m"
-            timestampString = "409484336.884097"
+            timestampString = "411929210.329644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "@implementation DetailViewController"
             landmarkType = "3">
          </BreakpointContent>

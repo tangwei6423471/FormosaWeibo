@@ -10,7 +10,7 @@
                 <outlet property="nickLabel" destination="o4N-k5-fI6" id="ymp-C7-eZi"/>
                 <outlet property="tableView" destination="8VO-Ti-Tzu" id="FUW-KD-NMp"/>
                 <outlet property="userBarView" destination="Sy8-PQ-lCj" id="UKH-u2-YPe"/>
-                <outlet property="userImageView" destination="28D-1y-6Pk" id="HJS-rf-Sw7"/>
+                <outlet property="userImageView" destination="Lt3-36-l9c" id="wqt-it-Uxk"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -37,10 +37,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="28D-1y-6Pk">
-                    <rect key="frame" x="9" y="10" width="40" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o4N-k5-fI6">
                     <rect key="frame" x="57" y="19" width="218" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,6 +51,14 @@
                     <rect key="frame" x="0.0" y="59" width="320" height="1"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lt3-36-l9c">
+                    <rect key="frame" x="10" y="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>

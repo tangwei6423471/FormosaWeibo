@@ -13,6 +13,8 @@
 #import "RightViewController.h"
 #import "SinaWeibo.h"
 #import "ThemeManager.h"
+#import "MBProgressHUD.h"
+#import "HomeViewController.h"
 @implementation AppDelegate
 
 //初始化使用者對象 (裝載使用者訊息)
@@ -46,7 +48,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     
     //-----初始化微博對象,裡面裝著使用者訊息,令牌---
@@ -59,10 +61,10 @@
     
     
     //--------DDMenu設置--------
-    MainViewController *mainCtrl = [[MainViewController alloc] init];
+    self.mainCtrl = [[MainViewController alloc] init];
     LeftViewController *leftCtrl = [[LeftViewController alloc] init];
     RightViewController *rightCtrl = [[RightViewController alloc] init];
-    DDMenuController *menu = [[DDMenuController alloc] initWithRootViewController:mainCtrl];
+    DDMenuController *menu = [[DDMenuController alloc] initWithRootViewController:self.mainCtrl];
     [menu setRightViewController:rightCtrl];
     [menu setLeftViewController:leftCtrl];
     //--------DDMenu End--------
@@ -102,14 +104,30 @@
     [[NSUserDefaults standardUserDefaults] setObject:authData forKey:@"SinaWeiboAuthData"]; // 新增Key,Value到字典 語法類似 :[someclass  setValue:@"5566" forKey:@"天團"];
      //同步置本地文件 user的信息
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    //發送登入成功的通知 Weibo列表刷新
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:nil];
+    
 
 }
+//註銷成功
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
 {
     
   [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SinaWeiboAuthData"];
     //同步置本地文件
   [[NSUserDefaults standardUserDefaults] synchronize];
+  //註銷成功的提示
+    MBProgressHUD *hud= [MBProgressHUD showHUDAddedTo:self.window animated:YES];
+    //圖片可以自己設
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    //顯示模式設為自定義
+    hud.mode =MBProgressHUDModeCustomView;
+    hud.labelText = @"註銷成功";
+    //顯示1.5秒
+    [hud hide:YES afterDelay:1.5];
+
 
 }
 @end

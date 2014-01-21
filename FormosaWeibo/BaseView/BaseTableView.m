@@ -95,7 +95,7 @@
         [_moreButton setTitle:@"上拉加載更多" forState:UIControlStateNormal];
     }else
     {
-        [_moreButton setTitle:@"加載完成" forState:UIControlStateNormal];
+        [_moreButton setTitle:@"" forState:UIControlStateNormal];
         //禁用Button
         _moreButton.enabled = NO;
     }

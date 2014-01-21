@@ -14,6 +14,9 @@
 #import "RegexKitLite.h" //要導入libicucore.dylib 類庫
 #import "NSString+URLEncoding.h"
 #import "UIUtils.h"
+#import "ZoomImageView.h"
+#import "ProfileViewController.h"
+
 @implementation WeiboView
 
 - (id)initWithFrame:(CGRect)frame
@@ -38,7 +41,7 @@
     [self addSubview:_textLabel];
     
     //微博圖片
-    _imageView=[[UIImageView alloc] initWithFrame:CGRectZero];
+    _imageView=[[ZoomImageView alloc] initWithFrame:CGRectZero];
     //UIViewContentModeScaleAspectFit 顯示圖片的原始比例,自適應
     _imageView.contentMode =UIViewContentModeScaleAspectFit;
     _imageView.backgroundColor=[UIColor clearColor];
@@ -153,6 +156,14 @@
 }
 -(void)_renderImage
 {
+    //微博大圖
+    NSString *originalImage =_weiboModel.originalImage;
+    if (originalImage !=nil && ![@"" isEqualToString:originalImage])
+    {
+        //添加點擊放大效果
+        [_imageView addZoom:_weiboModel.originalImage];
+    }
+
     if(self.isDetail)
     {
         //中等尺寸的圖片URL
@@ -385,32 +396,6 @@
 #pragma mark- RTlable delegate
 - (void)rtLabel:(id)rtLabel didSelectLinkWithURL:(NSURL*)url
 {
-    //url 內如果有中文就會出現null 所以要用NSString+URLEncoding 編碼以及解碼
-    //強轉為字符串
-    NSString *absoluteString = [url absoluteString];
-    if ([absoluteString hasPrefix:@"user"])
-    {
-        //user://用戶
-        //拿到" user:// "  後的東西
-        NSString *userstring = [url host];
-        //中文URl解碼
-        NSString *userName = [userstring URLDecodedString];
-        NSLog(@"用戶:%@",userName);
-    }
-    else if([absoluteString hasPrefix:@"http"])
-    {
-         NSLog(@"url:%@",absoluteString);
-        
-    }
-    else if ([absoluteString hasPrefix:@"topic"])
-    {
-        //拿到" topic:// "  後的東西
-        NSString *topicString = [url host];
-        //中文URl解碼
-        NSString *topicName = [topicString URLDecodedString];
-        NSLog(@"話題:%@",topicName);
-    
-    }
-   
+    [UIUtils openLink:url view:self];
 }
 @end

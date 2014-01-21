@@ -12,6 +12,8 @@
 #import "WeiboView.h"
 #import "CommentModel.h"
 #import "CommentCell.h"
+#import "UIButton+WebCache.h"
+#import "ProfileViewController.h"
 
 
 @interface DetailViewController ()
@@ -64,6 +66,7 @@
     //圓角
     self.userImageView.layer.cornerRadius = 5;
     self.userImageView.layer.masksToBounds =YES;
+    [self.userImageView addTarget:self action:@selector(userAction) forControlEvents:UIControlEventTouchUpInside];
     
     //加載用戶暱稱
     self.nickLabel.text = _weiboModel.user.screen_name;
@@ -95,6 +98,15 @@
     //請求參數
     self.request = [self.sinaweibo requestWithURL:@"comments/show.json" params:params httpMethod:@"GET" delegate:self];
 
+
+}
+
+-(void)userAction
+{
+    ProfileViewController *profile= [[ProfileViewController alloc] init];
+    profile.userName =_weiboModel.user.screen_name;
+    [self.navigationController pushViewController:profile animated:YES];
+    [profile release];
 
 }
 //請求完成

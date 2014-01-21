@@ -30,5 +30,7 @@
  */
 + (NSString *)parseLink:(NSString *)text;
 
+//打開(處理)RTLabel中的鏈接
++ (void)openLink:(NSURL *)url view:(UIView *)view;
 
 @end

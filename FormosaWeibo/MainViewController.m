@@ -79,6 +79,9 @@
     
     //viewControllers給TabbarController
     self.viewControllers=viewControllers;
+    
+    //取出當前用戶id
+    profile.userId = profile.sinaweibo.userID;
 
 
 }
@@ -223,7 +226,7 @@
 {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     SinaWeibo *sinaweibo= appDelegate.sinaweibo;
-    NSString *userId = sinaweibo.userID;
+    //NSString *userId = sinaweibo.userID;
     [sinaweibo requestWithURL:@"remind/unread_count.json" params:nil httpMethod:@"GET" delegate:self];
     
     

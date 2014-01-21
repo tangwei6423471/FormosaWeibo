@@ -25,6 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title=@"首頁";
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logInSuccessNotification:) name:kLoginSuccessNotification object:nil];
         
     }
     return self;
@@ -44,7 +45,7 @@
     
     //取消按钮
     UIButton * logoutButton = [UIFactory createNavigationButton:@"登出"];
-    [loginButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
+    [logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithCustomView:logoutButton];
     self.navigationItem.leftBarButtonItem = [logoutItem autorelease];
     
@@ -52,7 +53,7 @@
     
     
     
-    //隱藏tableView
+    //隱藏tableView,避免顯示空的tableView
     self.tableView.hidden = YES;
     //refreshDelegate
     self.tableView.refreshDelegate = self;
@@ -61,6 +62,12 @@
     if (self.sinaweibo.isAuthValid) {
         //加載微博列表数据
         [self loadWeiboData];
+        loginButton.enabled = NO;
+ 
+    }else
+    {
+        //跳出登入界面
+        [self.sinaweibo logIn];
     }
     
     
@@ -71,6 +78,7 @@
 #pragma mark - load Data
 //加載微博數據
 - (void)loadWeiboData {
+
     //顯示加載提示 ios自帶的
     //[super showLoading:YES];
     //顯示加載提示 HUD
@@ -143,20 +151,20 @@
     
     
 }
-//選中單元格事件
-- (void)didSelectRowAtIndexPath:(BaseTableView *)tableView indexPath:(NSIndexPath *)indexPath
-{
-    
-        DetailViewController *detail = [[DetailViewController alloc] init];
-        //賦給數據
-        detail.weiboModel = [_data objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:detail animated:YES];
-        [detail release];
-    
-        //清除選中效果
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-}
+////選中單元格事件
+//- (void)didSelectRowAtIndexPath:(BaseTableView *)tableView indexPath:(NSIndexPath *)indexPath
+//{
+//    
+//        DetailViewController *detail = [[DetailViewController alloc] init];
+//        //賦給數據
+//        detail.weiboModel = [_data objectAtIndex:indexPath.row];
+//        [self.navigationController pushViewController:detail animated:YES];
+//        [detail release];
+//    
+//        //清除選中效果
+//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//
+//}
 //------------------BaseTableView delegate End------------------
 #pragma mark - UI
 -(void)showNewWeiboCount:(int)aCount
@@ -366,9 +374,18 @@
 {
     //登出
     [self.sinaweibo logOut];
-
+    //隱藏tableView
+    self.tableView.hidden = YES;
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
+-(void)logInSuccessNotification:(NSNotification *)notification
+{
+    //禁用登入按鈕
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    //加載微博數據
+    [self loadWeiboData];
+}
 
 
 #pragma mark - Memory
@@ -381,6 +398,7 @@
 
 -(void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kLoginSuccessNotification object:nil];
     [_tableView release];
     [super dealloc];
 }

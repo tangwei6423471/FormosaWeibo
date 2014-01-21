@@ -20,11 +20,12 @@
 #define Weibo_Width_Cell ScreenWidth-60
 @class WeiboModel;
 @class ThemeImageView;
+@class ZoomImageView;
 @interface WeiboView : UIView<RTLabelDelegate>
 {
 @private
     RTLabel *_textLabel;
-    UIImageView  *_imageView;
+    ZoomImageView  *_imageView;
     //源微博子視圖
     WeiboView    *_sourceWeiboView;
     //源微博的背景視圖

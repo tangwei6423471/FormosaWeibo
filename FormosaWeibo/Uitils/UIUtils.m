@@ -10,6 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "RegexKitLite.h" //要導入libicucore.dylib 類庫
 #import "NSString+URLEncoding.h"
+#import "ProfileViewController.h"
 
 @implementation UIUtils
 
@@ -55,6 +56,7 @@
 //解析與替換為超鏈接
 + (NSString *)parseLink:(NSString *)text
 {
+    //NSLog(@"%@",text);
     //需要添加鏈接的字符串: @用戶 , http:// ,#話題# 正則表達式
     NSString *regex1 = @"@\\w+";    //因為\在oc裡面是特殊字符
     NSString *regex2 = @"http(s)?://([A-Za-z0-9._-]+(/)?)*";
@@ -72,9 +74,12 @@
         //hasPrefix :判斷字符串以什麼開頭
         if ([linkString hasPrefix:@"@"])
         {
+            //substringFromIndex抽取字串 ,只拿index 以後的
+            NSString *subLink = [linkString substringFromIndex:1];
+            
             //url 內如果有中文就會出現null 所以要用NSString+URLEncoding 編碼以及解碼
             //中文URL編碼
-            NSString *encodestring = [linkString URLEncodedString];
+            NSString *encodestring = [subLink URLEncodedString];
             NSString *replacement = [NSString stringWithFormat:@"<a href='user://%@'>%@</a>",encodestring,linkString];
             //把linkString字符串 替換為replacement
             text = [text stringByReplacingOccurrencesOfString:linkString withString:replacement];
@@ -101,6 +106,42 @@
     }
     return text;
 
+}
+//打開(處理)RTLabel中的鏈接
++ (void)openLink:(NSURL *)url view:(UIView *)view
+{
+    //url 內如果有中文就會出現null 所以要用NSString+URLEncoding 編碼以及解碼
+    //強轉為字符串
+    NSString *absoluteString = [url absoluteString];
+    if ([absoluteString hasPrefix:@"user"])
+    {
+        //user://用戶
+        //拿到" user:// "  後的東西
+        NSString *userstring = [url host];
+        //中文URl解碼
+        NSString *userName = [userstring URLDecodedString];
+        NSLog(@"用戶:%@",userName);
+        ProfileViewController *profile = [[ProfileViewController alloc] init];
+        profile.userName = userName;
+        [view.GetSelfViewController.navigationController pushViewController:profile animated:YES];
+        [profile release];
+        
+        
+    }
+    else if([absoluteString hasPrefix:@"http"])
+    {
+        NSLog(@"url:%@",absoluteString);
+        
+    }
+    else if ([absoluteString hasPrefix:@"topic"])
+    {
+        //拿到" topic:// "  後的東西
+        NSString *topicString = [url host];
+        //中文URl解碼
+        NSString *topicName = [topicString URLDecodedString];
+        NSLog(@"話題:%@",topicName);
+        
+    }
 }
 
 @end

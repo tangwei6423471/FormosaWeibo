@@ -144,7 +144,7 @@
 //操作完成的提示
 - (void)showHUDComplete:(NSString *)title
 {
-    //圖片可以自己設
+    //打勾的圖片(圖片可以自己設)
     self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     //顯示模式設為自定義
     self.hud.mode =MBProgressHUDModeCustomView;
